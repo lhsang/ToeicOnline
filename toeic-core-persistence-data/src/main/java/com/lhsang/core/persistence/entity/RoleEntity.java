@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "role")
-public class Role {
+public class RoleEntity {
     @Id
     @Column(name = "roleid")
     private Integer roleId;
@@ -13,15 +13,15 @@ public class Role {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "role",fetch = FetchType.LAZY)
-    private List<User> userList;
+    @OneToMany(mappedBy = "roleEntity",fetch = FetchType.LAZY)
+    private List<UserEntity> userEntityList;
 
-    public List<User> getUserList() {
-        return userList;
+    public List<UserEntity> getUserEntityList() {
+        return userEntityList;
     }
 
-    public void setUserList(List<User> userList) {
-        this.userList = userList;
+    public void setUserEntityList(List<UserEntity> userEntityList) {
+        this.userEntityList = userEntityList;
     }
 
     public Integer getRoleId() {

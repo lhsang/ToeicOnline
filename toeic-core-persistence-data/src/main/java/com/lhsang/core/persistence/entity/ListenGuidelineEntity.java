@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "listenguideline")
-public class ListenGuideline {
+public class ListenGuidelineEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer listenGuideline;
@@ -28,15 +28,15 @@ public class ListenGuideline {
 
 
 
-    @OneToMany(mappedBy = "listenGuideline",fetch = FetchType.LAZY)
-    private List<Comment> commentList;
+    @OneToMany(mappedBy = "listenGuidelineEntity",fetch = FetchType.LAZY)
+    private List<CommentEntity> commentEntityList;
 
-    public List<Comment> getCommentList() {
-        return commentList;
+    public List<CommentEntity> getCommentEntityList() {
+        return commentEntityList;
     }
 
-    public void setCommentList(List<Comment> commentList) {
-        this.commentList = commentList;
+    public void setCommentEntityList(List<CommentEntity> commentEntityList) {
+        this.commentEntityList = commentEntityList;
     }
 
     public Integer getListenGuideline() {

@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 
 @Entity
 @Table(name = "commment")
-public class Comment {
+public class CommentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer commentId;
@@ -16,20 +16,20 @@ public class Comment {
     @Column(name = "userid")
     private Integer userId;
 
-    public User getUser() {
-        return user;
+    public UserEntity getUserEntity() {
+        return userEntity;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserEntity(UserEntity userEntity) {
+        this.userEntity = userEntity;
     }
 
-    public ListenGuideline getListenGuideline() {
-        return listenGuideline;
+    public ListenGuidelineEntity getListenGuidelineEntity() {
+        return listenGuidelineEntity;
     }
 
-    public void setListenGuideline(ListenGuideline listenGuideline) {
-        this.listenGuideline = listenGuideline;
+    public void setListenGuidelineEntity(ListenGuidelineEntity listenGuidelineEntity) {
+        this.listenGuidelineEntity = listenGuidelineEntity;
     }
 
     @Column(name = "createdate")
@@ -37,11 +37,11 @@ public class Comment {
 
     @ManyToOne
     @JoinColumn(name = "userid")
-    private User user;
+    private UserEntity userEntity;
 
     @ManyToOne
     @JoinColumn(name = "listenguideline")
-    private ListenGuideline listenGuideline;
+    private ListenGuidelineEntity listenGuidelineEntity;
 
     public Integer getCommentId() {
         return commentId;
