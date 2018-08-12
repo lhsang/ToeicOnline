@@ -27,19 +27,11 @@ public class UserEntity {
     @JoinColumn(name = "roleid")
     private RoleEntity roleEntity;
 
-    @OneToMany(mappedBy = "userEntityList",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "userEntity",fetch = FetchType.LAZY)
     private List<CommentEntity> commentEntityList;
 
     public Integer getUserId() {
         return userId;
-    }
-
-    public RoleEntity getRoleEntity() {
-        return roleEntity;
-    }
-
-    public void setRoleEntity(RoleEntity roleEntity) {
-        this.roleEntity = roleEntity;
     }
 
     public void setUserId(Integer userId) {
@@ -76,5 +68,21 @@ public class UserEntity {
 
     public void setCreateDate(Timestamp createDate) {
         this.createDate = createDate;
+    }
+
+    public RoleEntity getRoleEntity() {
+        return roleEntity;
+    }
+
+    public void setRoleEntity(RoleEntity roleEntity) {
+        this.roleEntity = roleEntity;
+    }
+
+    public List<CommentEntity> getCommentEntityList() {
+        return commentEntityList;
+    }
+
+    public void setCommentEntityList(List<CommentEntity> commentEntityList) {
+        this.commentEntityList = commentEntityList;
     }
 }

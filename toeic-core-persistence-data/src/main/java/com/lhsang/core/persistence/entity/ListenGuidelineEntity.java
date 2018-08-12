@@ -9,7 +9,7 @@ import java.util.List;
 public class ListenGuidelineEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer listenGuideline;
+    private Integer listenGuidelineId;
 
     @Column(name = "title")
     private String title;
@@ -24,27 +24,17 @@ public class ListenGuidelineEntity {
     private Timestamp createDate;
 
     @Column(name = "modifieddate")
-    private Timestamp modefiedDate;
-
-
+    private Timestamp modifiedDate;
 
     @OneToMany(mappedBy = "listenGuidelineEntity",fetch = FetchType.LAZY)
     private List<CommentEntity> commentEntityList;
 
-    public List<CommentEntity> getCommentEntityList() {
-        return commentEntityList;
+    public Integer getListenGuidelineId() {
+        return listenGuidelineId;
     }
 
-    public void setCommentEntityList(List<CommentEntity> commentEntityList) {
-        this.commentEntityList = commentEntityList;
-    }
-
-    public Integer getListenGuideline() {
-        return listenGuideline;
-    }
-
-    public void setListenGuideline(Integer listenGuideline) {
-        this.listenGuideline = listenGuideline;
+    public void setListenGuidelineId(Integer listenGuidelineId) {
+        this.listenGuidelineId = listenGuidelineId;
     }
 
     public String getTitle() {
@@ -79,11 +69,19 @@ public class ListenGuidelineEntity {
         this.createDate = createDate;
     }
 
-    public Timestamp getModefiedDate() {
-        return modefiedDate;
+    public Timestamp getModifiedDate() {
+        return modifiedDate;
     }
 
-    public void setModefiedDate(Timestamp modefiedDate) {
-        this.modefiedDate = modefiedDate;
+    public void setModifiedDate(Timestamp modifiedDate) {
+        this.modifiedDate = modifiedDate;
+    }
+
+    public List<CommentEntity> getCommentEntityList() {
+        return commentEntityList;
+    }
+
+    public void setCommentEntityList(List<CommentEntity> commentEntityList) {
+        this.commentEntityList = commentEntityList;
     }
 }

@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "commment")
+@Table(name = "comment")
 public class CommentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,25 +12,6 @@ public class CommentEntity {
 
     @Column(name = "content")
     private String content;
-
-    @Column(name = "userid")
-    private Integer userId;
-
-    public UserEntity getUserEntity() {
-        return userEntity;
-    }
-
-    public void setUserEntity(UserEntity userEntity) {
-        this.userEntity = userEntity;
-    }
-
-    public ListenGuidelineEntity getListenGuidelineEntity() {
-        return listenGuidelineEntity;
-    }
-
-    public void setListenGuidelineEntity(ListenGuidelineEntity listenGuidelineEntity) {
-        this.listenGuidelineEntity = listenGuidelineEntity;
-    }
 
     @Column(name = "createdate")
     private Timestamp createDate;
@@ -40,7 +21,7 @@ public class CommentEntity {
     private UserEntity userEntity;
 
     @ManyToOne
-    @JoinColumn(name = "listenguideline")
+    @JoinColumn(name = "listenguidelineid")
     private ListenGuidelineEntity listenGuidelineEntity;
 
     public Integer getCommentId() {
@@ -59,19 +40,27 @@ public class CommentEntity {
         this.content = content;
     }
 
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
     public Timestamp getCreateDate() {
         return createDate;
     }
 
     public void setCreateDate(Timestamp createDate) {
         this.createDate = createDate;
+    }
+
+    public UserEntity getUserEntity() {
+        return userEntity;
+    }
+
+    public void setUserEntity(UserEntity userEntity) {
+        this.userEntity = userEntity;
+    }
+
+    public ListenGuidelineEntity getListenGuidelineEntity() {
+        return listenGuidelineEntity;
+    }
+
+    public void setListenGuidelineEntity(ListenGuidelineEntity listenGuidelineEntity) {
+        this.listenGuidelineEntity = listenGuidelineEntity;
     }
 }

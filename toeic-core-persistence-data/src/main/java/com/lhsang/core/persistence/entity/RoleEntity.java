@@ -16,14 +16,6 @@ public class RoleEntity {
     @OneToMany(mappedBy = "roleEntity",fetch = FetchType.LAZY)
     private List<UserEntity> userEntityList;
 
-    public List<UserEntity> getUserEntityList() {
-        return userEntityList;
-    }
-
-    public void setUserEntityList(List<UserEntity> userEntityList) {
-        this.userEntityList = userEntityList;
-    }
-
     public Integer getRoleId() {
         return roleId;
     }
@@ -38,5 +30,13 @@ public class RoleEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<UserEntity> getUserEntityList() {
+        return userEntityList;
+    }
+
+    public void setUserEntityList(List<UserEntity> userEntityList) {
+        this.userEntityList = userEntityList;
     }
 }
