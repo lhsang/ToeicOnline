@@ -1,5 +1,6 @@
 <%@ include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<c:url var="formUrl" value="/login.html"/>
 <html>
 <head>
     <title><fmt:message key="label.login" bundle="${lang}"/> <fmt:message key="label.ToeicOnline" bundle="${lang}"/> </title>
@@ -14,22 +15,28 @@
             </h4>
             <div class="space-6"></div>
 
-            <form>
+            <form action="${formUrl}" method="post">
                 <fieldset>
                     <label class="block clearfix">
-                                <span class="block input-icon input-icon-right">
-                                    <input type="text" class="form-control" placeholder="Username"/>
-                                    <i class="ace-icon fa fa-user"></i>
-                                </span>
+                        <span class="block input-icon input-icon-right">
+                            <input type="text" class="form-control" placeholder="Username" name="pojo.name"/>
+                            <i class="ace-icon fa fa-user"></i>
+                        </span>
                     </label>
 
                     <label class="block clearfix">
-                                <span class="block input-icon input-icon-right">
-                                    <input type="password" class="form-control" placeholder="Password"/>
-                                    <i class="ace-icon fa fa-lock"></i>
-                                </span>
+                        <span class="block input-icon input-icon-right">
+                            <input type="password" class="form-control" placeholder="Password" name="pojo.password"/>
+                            <i class="ace-icon fa fa-lock"></i>
+                        </span>
                     </label>
 
+                    <label class="block clearfix">
+                        <span class="block input-icon input-icon-right">
+                            <input type="password" class="form-control" placeholder="Confirm Password" name="confirmPassword"/>
+                            <i class="ace-icon fa fa-lock"></i>
+                        </span>
+                    </label>
                     <div class="space"></div>
 
                     <div class="clearfix">
@@ -38,9 +45,9 @@
                             <span class="lbl"><fmt:message key="label.login.remember" bundle="${lang}"/> </span>
                         </label>
 
-                        <button type="button" class="width-35 pull-right btn btn-sm btn-primary">
+                        <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
                             <i class="ace-icon fa fa-key"></i>
-                            <span class="bigger-110"><fmt:message key="label.login" bundle="${lang}"/></span>
+                            <span class="bigger-110"><fmt:message key="label.login" bundle="${lang}"/> </span>
                         </button>
                     </div>
 

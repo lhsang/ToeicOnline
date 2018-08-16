@@ -1,4 +1,4 @@
 package com.lhsang.core.service;
 
-public interface TestService {
+public interface UserService  {
 }
